@@ -1,0 +1,7 @@
+const menus={coffee:[['Эспрессо','Шоколад, фундук, карамель','190 ₽'],['Фильтр','Зерно недели','240 ₽'],['Капучино','Классический или на растительном','290 ₽'],['Раф с халвой','Сливочный, с лёгкой солёностью','340 ₽']],breakfast:[['Скрэмбл и бриошь','Яйца, томаты, зелень','490 ₽'],['Сырники','Сметана, сезонная ягода','430 ₽'],['Авокадо-тост','Хумус, яйцо пашот','520 ₽'],['Гранола','Йогурт, мёд, фрукты','390 ₽']],dessert:[['Баскский чизкейк','Солёная карамель','360 ₽'],['Лимонный тарт','Меренга, цедра','340 ₽'],['Канеле','Ваниль и тёмный ром','190 ₽'],['Морковный кекс','Пекан, крем-чиз','280 ₽']]};
+const list=document.querySelector('#menu-list');
+function renderMenu(key){list.innerHTML=menus[key].map(([name,desc,price])=>`<article class="menu-item"><div><h3>${name}</h3><p>${desc}</p></div><strong>${price}</strong></article>`).join('')}
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderMenu(btn.dataset.tab)}));renderMenu('coffee');
+const dialog=document.querySelector('#booking');document.querySelectorAll('[data-open-booking]').forEach(b=>b.addEventListener('click',()=>dialog.showModal()));document.querySelector('[data-close-booking]').addEventListener('click',()=>dialog.close());
+document.querySelector('#booking-form').addEventListener('submit',e=>{e.preventDefault();e.currentTarget.hidden=true;document.querySelector('#booking-success').hidden=false});
+
