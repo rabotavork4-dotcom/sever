@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="СЕВЕР — камерная кофейня со спешелти-кофе и завтраками весь день.">
+  <title>СЕВЕР — кофе и завтраки</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="СЕВЕР, на главную"><span>С</span>СЕВЕР</a>
+    <nav aria-label="Основная навигация">
+      <a href="#menu">Меню</a><a href="#story">О нас</a><a href="#visit">Контакты</a>
+    </nav>
+    <button class="nav-cta" data-open-booking>Забронировать</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="assets/hero.png" alt="Бариста готовит эспрессо в тёплом интерьере кофейни">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Тихое место в центре города</p>
+        <h1>Утро начинается<br>с хорошего зерна.</h1>
+        <p class="lead">Спешелти-кофе, завтраки весь день и пространство, в котором никуда не хочется спешить.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#menu">Смотреть меню</a>
+          <button class="button ghost" data-open-booking>Забронировать стол</button>
+        </div>
+      </div>
+      <a class="scroll" href="#menu" aria-label="К меню">Листайте <span>↓</span></a>
+    </section>
+
+    <section class="ticker" aria-label="Особенности кофейни">
+      <span>Обжариваем каждую неделю</span><i></i><span>Завтраки до 20:00</span><i></i><span>Можно с питомцами</span>
+    </section>
+
+    <section class="menu section" id="menu">
+      <div class="section-heading">
+        <div><p class="eyebrow dark">Меню</p><h2>Простые вещи,<br>сделанные внимательно.</h2></div>
+        <p>Мы меняем зерно по сезону и готовим еду только из понятных продуктов. Здесь — выбор гостей этой недели.</p>
+      </div>
+      <div class="menu-tabs" role="tablist" aria-label="Категории меню">
+        <button class="active" data-tab="coffee" role="tab">Кофе</button>
+        <button data-tab="breakfast" role="tab">Завтраки</button>
+        <button data-tab="dessert" role="tab">Десерты</button>
+      </div>
+      <div class="menu-list" id="menu-list" aria-live="polite"></div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-number">01</div>
+      <div>
+        <p class="eyebrow">Наша идея</p>
+        <h2>Кофейня как пауза<br>посреди дня.</h2>
+      </div>
+      <div class="story-copy">
+        <p>Мы построили «СЕВЕР» вокруг простой мысли: хороший кофе не требует сложных слов, а гостеприимство начинается с внимания.</p>
+        <p>Поэтому здесь спокойно, бариста знают зерно, а на кухне не экономят время на деталях.</p>
+      </div>
+    </section>
+
+    <section class="visit section" id="visit">
+      <div class="visit-card">
+        <p class="eyebrow dark">Заглядывайте</p>
+        <h2>Каждый день<br>с 8:00 до 22:00</h2>
+        <div class="visit-grid">
+          <div><span>Адрес</span><p>ул. Светлая, 14<br>вход со двора</p></div>
+          <div><span>Связаться</span><p>+7 (900) 000-14-14<br>hello@sever.cafe</p></div>
+        </div>
+        <button class="button ink" data-open-booking>Выбрать время</button>
+      </div>
+      <div class="map" aria-label="Схематичная карта расположения">
+        <div class="street one">НАБЕРЕЖНАЯ</div><div class="street two">СВЕТЛАЯ</div>
+        <div class="pin"><span>С</span><b>СЕВЕР</b></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#top"><span>С</span>СЕВЕР</a><p>Концепт сайта для портфолио</p><p>© 2026</p></footer>
+
+  <dialog id="booking">
+    <button class="close" aria-label="Закрыть" data-close-booking>×</button>
+    <p class="eyebrow dark">Бронирование</p><h2>Столик в «СЕВЕРЕ»</h2>
+    <form id="booking-form">
+      <label>Ваше имя<input required name="name" autocomplete="name" placeholder="Алексей"></label>
+      <div class="form-row"><label>Дата<input required type="date" name="date"></label><label>Время<select name="time"><option>10:00</option><option>13:00</option><option>16:00</option><option>19:00</option></select></label></div>
+      <label>Количество гостей<select name="guests"><option>1 гость</option><option>2 гостя</option><option>3 гостя</option><option>4 гостя</option></select></label>
+      <button class="button ink" type="submit">Оставить заявку</button>
+      <small>Демонстрационная форма: данные никуда не отправляются.</small>
+    </form>
+    <div class="success" id="booking-success" hidden><span>✓</span><h3>Время выбрано</h3><p>Так выглядит подтверждение бронирования в готовом проекте.</p></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
+
